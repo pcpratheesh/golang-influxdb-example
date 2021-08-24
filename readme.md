@@ -2,29 +2,30 @@
 This is a sample respository to leanrn how we can perform influx db operations with an api endpoint.
 
 To get all items from db
-```golang
-    app.Get("/get", func(c *fiber.Ctx) error {
-		data, err := influxInstance.GetAllItems()
-		if err != nil {
-			return c.Status(fiber.ErrBadGateway.Code).JSON(err.Error())
-		}
-		return c.JSON(data)
-	})
+```go
+app.Get("/get", func(c *fiber.Ctx) error {
+    data, err := influxInstance.GetAllItems()
+    if err != nil {
+        return c.Status(fiber.ErrBadGateway.Code).JSON(err.Error())
+    }
+    return c.JSON(data)
+})
 ```
 
 To create new entry to the db
-```golang
-    app.Post("/create", func(c *fiber.Ctx) error {
-		err := influxInstance.InsertSample()
-		if err != nil {
-			return c.Status(fiber.ErrBadGateway.Code).JSON(err.Error())
-		}
-		return c.JSON("successfully inserted")
-	})
+
+```go
+app.Post("/create", func(c *fiber.Ctx) error {
+    err := influxInstance.InsertSample()
+    if err != nil {
+        return c.Status(fiber.ErrBadGateway.Code).JSON(err.Error())
+    }
+    return c.JSON("successfully inserted")
+})
 ```
 
 ### Run
-```golang
+```go
     go run main.go
 ```
 
