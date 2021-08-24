@@ -1,0 +1,14 @@
+# 
+# YAML configuration file
+# 
+server:
+  host: localhost
+  port: 8080
+
+influxInstance:
+  host: localhost
+  port: 8086
+  db: go_influx
+  user: admin
+  password: admin
+  token: token
