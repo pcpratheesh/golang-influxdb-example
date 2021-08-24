@@ -21,7 +21,7 @@ type Config struct {
 
 func LoadConfiguration() (*Config, error) {
 	var cfg Config
-	err := cleanenv.ReadConfig("config.yml", &cfg)
+	err := cleanenv.ReadConfig("config/config.yml", &cfg)
 	if err != nil {
 		return nil, err
 	}

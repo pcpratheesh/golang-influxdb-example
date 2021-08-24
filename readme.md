@@ -24,6 +24,22 @@ app.Post("/create", func(c *fiber.Ctx) error {
 })
 ```
 
+## configuration
+- rename config.sample.yml into config.yml
+- change the configuration variables
+
+```yml
+server:
+  host: server host
+  port: server running port
+
+influxInstance:
+  host: db host
+  port: db port
+  db: database
+  user: db user
+  password: db password
+```
 ### Run
 ```go
     go run main.go
