@@ -42,6 +42,10 @@ func (i *Instance) Connect() error {
 	if err != nil {
 		return err
 	}
+	_, _, err = c.Ping(10)
+	if err != nil {
+		return err
+	}
 
 	i.Client = c
 
